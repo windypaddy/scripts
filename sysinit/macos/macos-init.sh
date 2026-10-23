@@ -23,7 +23,7 @@ log_error() {
 download_zshrc() {
     log_info "Downloading .zshrc..."
     local target_file="$HOME/.zshrc"
-    local source_url="https://raw.githubusercontent.com/windypaddy/scripts/refs/heads/main/zsh.zshrc"
+    local source_url="https://raw.githubusercontent.com/windypaddy/scripts/refs/heads/main/shell/zsh.zshrc"
     local temp_file="/tmp/.zshrc.$$"
 
     if ! wget -q -O "$temp_file" "$source_url"; then

@@ -146,7 +146,7 @@ configure_locale() {
 download_bashrc() {
     log_info "Downloading bash.bashrc..."
     local target_file="/etc/bash.bashrc"
-    local source_url="https://raw.githubusercontent.com/windypaddy/scripts/refs/heads/main/bash.bashrc"
+    local source_url="https://raw.githubusercontent.com/windypaddy/scripts/refs/heads/main/shell/bash.bashrc"
     local temp_file="/tmp/bash.bashrc.$$"
 
     if ! wget -q -O "$temp_file" "$source_url"; then
