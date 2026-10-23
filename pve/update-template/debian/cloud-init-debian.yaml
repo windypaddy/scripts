@@ -1,0 +1,21 @@
+#cloud-config
+chpasswd:
+  expire: false
+  users:
+    - name: root
+      password: root
+      type: text
+disable_root: false
+ssh_pwauth: true
+write_files:
+  - path: /etc/ssh/sshd_config.d/99-cloud-init-allow-root-pw.conf
+    content: |
+      PasswordAuthentication yes
+      PermitRootLogin yes
+    append: false
+runcmd:
+  - [systemctl, restart, ssh]
+power_state:
+  mode: poweroff
+  timeout: 30
+  condition: true
