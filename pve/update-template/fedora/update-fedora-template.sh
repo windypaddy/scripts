@@ -68,10 +68,9 @@ RAW_BASE="https://raw.githubusercontent.com/windypaddy/scripts/refs/heads/main/p
 # Where the snippets live on the PVE host (matches the local:snippets/ refs above).
 SNIPPETS_DIR="/var/lib/vz/snippets"
 
-# Work directory: use the "tmp" subdir on the pve storage mount (/mnt/pve/tmp)
-# instead of /tmp, so the multi-GB images don't touch the root filesystem or a
-# memory-backed tmpfs.
-TMPDIR=$(mktemp -d /mnt/pve/tmp/tmp/fedimg.XXXXXX)
+# Work directory: use /srv/var (a dedicated storage mount) instead of /tmp, so
+# the multi-GB images don't touch the root filesystem or a memory-backed tmpfs.
+TMPDIR=$(mktemp -d /srv/var/fedimg.XXXXXX)
 trap 'rm -rf "$TMPDIR"' EXIT
 
 # ===================== Bootstrap: root check + snippet deploy =====================
