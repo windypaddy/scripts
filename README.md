@@ -15,7 +15,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/windypaddy/scripts/refs/head
 Debian initialization (requires root, idempotent): deploys `bash.bashrc`, configures the timezone (`Asia/Singapore`), apt mirrors and sources, SSH hardening (`sshd_config.d/03-mira.conf`), removes the `debian` user, and sets the locale (`LC_TIME=en_DK.UTF-8`) and `/etc/environment` defaults.
 
 ```bash
-sudo bash <(curl -fsSL https://raw.githubusercontent.com/windypaddy/scripts/refs/heads/main/sysinit/debian/debian-init.sh)
+curl -fsSL https://raw.githubusercontent.com/windypaddy/scripts/refs/heads/main/sysinit/debian/debian-init.sh | sudo bash
 ```
 
 ## pve/update-template/debian/update-debian-template.sh
